@@ -29,6 +29,9 @@ int main()
 	//mutiple3();
 	//bubble_sort();
 	//bubble_sort2();
-	 isprime100_200();
+	//isprime100_200();
+	 bissextile();
+	 //Mcomdiv();
+	//shutdown();
 	return 0;
 }
