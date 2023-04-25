@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //form left to right, and increase
-void exchange(int* x, int* y)
+void exchange2(int* x, int* y)
 {
 	int temp = 0;
 	temp = *y;
