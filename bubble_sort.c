@@ -17,7 +17,7 @@ void bubble_sort(void)
 		{
 			if (arr[j] > arr[i])
 			{
-				exchange(&arr[i], &arr[j]);
+				exchange(&arr[i], &arr[j]);//exchange two number
 			}
 		}
 	}

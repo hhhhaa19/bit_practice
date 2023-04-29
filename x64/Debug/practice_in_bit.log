@@ -1,5 +1,4 @@
-﻿  isprime.c
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\isprime.c(5,18): warning C4013: “sqrt”未定义；假设外部返回 int
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\isprime.c(24,4): warning C4013: “printf”未定义；假设外部返回 int
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\isprime.c(16): warning C4715: “isprime”: 不是所有的控件路径都返回值
+﻿  fib.c
+  main.c
+  正在生成代码...
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe

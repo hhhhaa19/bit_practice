@@ -127,20 +127,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="9times9_formula_sheet.c" />
+    <ClCompile Include="exchnage.c" />
+    <ClCompile Include="fib.c" />
+    <ClCompile Include="times_formula_sheet.c" />
     <ClCompile Include="binary_search.c" />
+    <ClCompile Include="bissextile.c" />
     <ClCompile Include="bubble_sort.c" />
     <ClCompile Include="campare.c" />
     <ClCompile Include="cumpute_loop.c" />
     <ClCompile Include="isprime.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Max_in_4.c" />
+    <ClCompile Include="Mcomdiv.c" />
     <ClCompile Include="mock_log.c" />
     <ClCompile Include="multiple3.c" />
     <ClCompile Include="number9_in100.c" />
     <ClCompile Include="practice_in_4_15_23.c" />
+    <ClCompile Include="shutdown.c" />
     <ClCompile Include="Struct.c" />
     <ClCompile Include="Sum_factorial.c" />
     <ClCompile Include="tcon_time_converter.c" />
+    <ClCompile Include="Tower_Hanoi.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

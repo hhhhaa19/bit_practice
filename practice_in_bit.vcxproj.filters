@@ -36,7 +36,7 @@
     <ClCompile Include="mock_log.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="9times9_formula_sheet.c">
+    <ClCompile Include="times_formula_sheet.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="campare.c">
@@ -57,5 +57,31 @@
     <ClCompile Include="isprime.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="bissextile.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Mcomdiv.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="shutdown.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Max_in_4.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="exchnage.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="fib.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower_Hanoi.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
