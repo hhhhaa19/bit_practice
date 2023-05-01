@@ -21,6 +21,11 @@ int main()
 	 //Mcomdiv();
 	//shutdown();
 	//timeforsheet(12);
-	printf("%d",i_fib(10000));
+	/*printf("%d\n",i_fib(10));
+	printf("%d", r_fib(10));*/
+	//printf("%d", my_pow(5, 3));
+	//printf("%d",DigitDum(1729));
+	char arr[7] = "abcdef";
+	printf("%d", my_strlen(arr));
 	return 0;
 }

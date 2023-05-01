@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdio.h>
+#include"main.h"
 void shutdown(void)
 {
 	char text[20] = { 0 };

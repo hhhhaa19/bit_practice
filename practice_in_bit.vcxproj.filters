@@ -78,6 +78,18 @@
     <ClCompile Include="Tower_Hanoi.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="pow.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DigitSum.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="reverse_string.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mystrlen.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

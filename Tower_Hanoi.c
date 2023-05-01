@@ -4,5 +4,5 @@ int Tower_Hanoi(int x)
 //·µ»Ø²½Êý
 	if (x == 1)
 		return 1;
-	else
+
 }
