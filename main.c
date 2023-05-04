@@ -26,6 +26,15 @@ int main()
 	//printf("%d", my_pow(5, 3));
 	//printf("%d",DigitDum(1729));
 	char arr[7] = "abcdef";
-	printf("%d", my_strlen(arr));
+	/*printf("%d", my_strlen(arr));
+	printf("%d", my_strlen2(arr));*/
+	//printf("%d", factorial(5));
+	//digital_pri(1234);
+	 reverse_string2(arr);
+	int i;
+	for (i = 1; i <= 7; i++)
+	{
+		printf("%c", arr[i - 1]);
+	}
 	return 0;
 }
