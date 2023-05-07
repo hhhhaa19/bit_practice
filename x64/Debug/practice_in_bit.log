@@ -1,8 +1,2 @@
-﻿  reverse_string.c
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(9,12): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(9,27): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(6,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(22,12): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(22,24): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse_string.c(17,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  main.c
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe

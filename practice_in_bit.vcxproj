@@ -129,11 +129,11 @@
   <ItemGroup>
     <ClCompile Include="digital_pri.c" />
     <ClCompile Include="DigitSum.c" />
-    <ClCompile Include="exchnage.c" />
+    <ClCompile Include="exchange.c" />
     <ClCompile Include="fib.c" />
     <ClCompile Include="mystrlen.c" />
     <ClCompile Include="pow.c" />
-    <ClCompile Include="reverse_string.c" />
+    <ClCompile Include="reverse.c" />
     <ClCompile Include="times_formula_sheet.c" />
     <ClCompile Include="binary_search.c" />
     <ClCompile Include="bissextile.c" />

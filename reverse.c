@@ -29,3 +29,9 @@ void reverse_string2(char* string)
 	}
 	string[len - 1] = temp;
 }
+void re_array(int* arr, int n)
+{
+	int i;
+	for (i = 1; i <= n / 2; i++)
+		exchange(&arr[i - 1], &arr[n - i]);
+}
