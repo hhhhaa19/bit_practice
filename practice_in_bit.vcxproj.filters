@@ -93,6 +93,15 @@
     <ClCompile Include="exchange.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="countbinary.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="binaryoddeven.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="diffinbin.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

@@ -78,18 +78,23 @@ int main()
 		//	printf("%d", arr[i]);
 		//}
 	// test for bubble_sort
-			int arr[10] = { 0 };
-			int i;
-			int sz = sizeof(arr) / sizeof(arr[1]);
-			for (i = 0; i < sz; i++)
-				{
-					scanf("%d", &arr[i]);
-				}
-			bubble_sort(arr, sz);
-			for (i = 0; i < 10; i++)
-				{
-					printf("%d, ", arr[i]);
-				}
-			printf("\n");
-			
+//			int arr[10] = { 0 };
+//			int i;
+//			int sz = sizeof(arr) / sizeof(arr[1]);
+//			for (i = 0; i < sz; i++)
+//				{
+//					scanf("%d", &arr[i]);
+//				}
+//			bubble_sort(arr, sz);
+//			for (i = 0; i < 10; i++)
+//				{
+//					printf("%d, ", arr[i]);
+//				}
+//			printf("\n");
+//			
+//}
+// 
+	printf("%d", diffinbin(12, 11));
+	return 0;
 }
+

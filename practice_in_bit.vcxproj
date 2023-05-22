@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="binaryoddeven.c" />
+    <ClCompile Include="countbinary.c" />
+    <ClCompile Include="diffinbin.c" />
     <ClCompile Include="digital_pri.c" />
     <ClCompile Include="DigitSum.c" />
     <ClCompile Include="exchange.c" />

@@ -28,3 +28,5 @@ extern void digital_pri(int x);
 extern void exchange(char* x, char* y);
 void ex_array(int* x, int* y, int n);
 extern void re_array(int* arr, int n);
+extern int ocuntbinary(int x);
+extern int diffinbin(int x, int y);
