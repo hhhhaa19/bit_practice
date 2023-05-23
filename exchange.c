@@ -5,9 +5,9 @@ void exchange(char* x, char* y)
 	*y = (*x) ^ (*y);
 	*x = (*x) ^ (*y);
 }
-void exchange2(int* x, int* y)
+void exchange2(char* x, char* y)
 {
-	int temp = 0;
+	char temp = 0;
 	temp = *y;
 	*y = *x;
 	*x = temp;

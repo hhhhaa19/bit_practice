@@ -35,3 +35,15 @@ void re_array(int* arr, int n)
 	for (i = 1; i <= n / 2; i++)
 		exchange(&arr[i - 1], &arr[n - i]);
 }
+void re_str(char str[])
+{
+	int n = strlen(str);
+	int left = 0;
+	int right = n - 1;
+	while (left <= right)
+	{
+		exchange2(&str[left], &str[right]);
+		left++;
+		right--;
+	}
+}

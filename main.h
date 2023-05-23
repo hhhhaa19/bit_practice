@@ -30,3 +30,7 @@ void ex_array(int* x, int* y, int n);
 extern void re_array(int* arr, int n);
 extern int ocuntbinary(int x);
 extern int diffinbin(int x, int y);
+extern void merge(void);
+extern void printarr(int arr[], int  sz);
+extern void re_str(char str[]);
+extern int Narcissistic_num(int x);

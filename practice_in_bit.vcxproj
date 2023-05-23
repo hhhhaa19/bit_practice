@@ -134,9 +134,13 @@
     <ClCompile Include="DigitSum.c" />
     <ClCompile Include="exchange.c" />
     <ClCompile Include="fib.c" />
+    <ClCompile Include="mergesort.c" />
     <ClCompile Include="mystrlen.c" />
+    <ClCompile Include="my_print.c" />
     <ClCompile Include="pow.c" />
     <ClCompile Include="reverse.c" />
+    <ClCompile Include="special_number.c" />
+    <ClCompile Include="Sum.c" />
     <ClCompile Include="times_formula_sheet.c" />
     <ClCompile Include="binary_search.c" />
     <ClCompile Include="bissextile.c" />
@@ -155,7 +159,7 @@
     <ClCompile Include="Struct.c" />
     <ClCompile Include="Sum_factorial.c" />
     <ClCompile Include="tcon_time_converter.c" />
-    <ClCompile Include="Tower_Hanoi.c" />
+    <ClCompile Include="print.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />

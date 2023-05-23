@@ -72,7 +72,7 @@
     <ClCompile Include="fib.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Tower_Hanoi.c">
+    <ClCompile Include="print.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="pow.c">
@@ -100,6 +100,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="diffinbin.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mergesort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="my_print.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="special_number.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sum.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

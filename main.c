@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "main.h"
-int main()
-{
+//int main()
+//{
 	//tcon_time_converter();
 	//P_struct();
 	//Sum_factorial
@@ -94,7 +94,76 @@ int main()
 //			
 //}
 // 
-	printf("%d", diffinbin(12, 11));
-	return 0;
+
+	//int main() 
+	//{
+	//	int a;
+	//	int i = 0;
+	//	int arr[51] = { 0 };
+	//	scanf("%d", &a);
+	//	for (i = 0; i < a; i++)
+	//	{
+	//		scanf("%d ", &arr[i]);
+	//	}
+	//	int flag1 = 1;
+	//	int flag2 = 1;
+	//	i = 0;
+	//	int j = 0;
+	//	for (i = 0; i < a; i++)
+	//	{
+	//		for (j = 0; j < a - i; j++)
+	//		{
+	//			if (arr[j] > arr[j + 1])
+	//				flag1 = 0;
+	//		}
+	//	}
+	//	for (i = 0; i < a; i++)
+	//	{
+	//		for (j = 0; j < a - i; j++)
+	//		{
+	//			if (arr[j] < arr[j + 1])
+	//				flag2 = 0;
+	//		}
+	//	}
+	//	if (0 == flag1 && 0 == flag2)
+	//		printf("unsorted");
+	//	else 
+	//		printf("sorted");
+////		return 0;
+////	
+////
+////}
+//int main()
+//{
+//	//char arr[10000] = { 0 };
+//	////scanf("%s", &arr);遇到空格会跳过
+//	//get(arr);//可以解决这个问题
+//	//re_str(arr);
+//	//printf("%s", arr);
+//	//return 0;
+// 
+// ******************************************************
+//	int i = 1;
+//	for (i = 1; i < 13; i+=2)
+//	{
+//		pristar(i);
+//		printf("\n");
+//	}
+//	for (i = 13; i > 0; i-=2)
+//	{
+//		pristar(i);
+//		printf("\n");
+//	}
+//}
+int main()
+{
+	/*int i = 0;
+	for (i = 1; i <= 10000; i++)
+	{
+		if (1 == Narcissistic_num(i))
+			printf("%d\n", i);
+	}
+	return 0;*/
+	printf("%d", sum_5(5));
 }
 
