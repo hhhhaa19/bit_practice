@@ -134,6 +134,7 @@
     <ClCompile Include="DigitSum.c" />
     <ClCompile Include="exchange.c" />
     <ClCompile Include="fib.c" />
+    <ClCompile Include="GCD.c" />
     <ClCompile Include="mergesort.c" />
     <ClCompile Include="mystrlen.c" />
     <ClCompile Include="my_print.c" />

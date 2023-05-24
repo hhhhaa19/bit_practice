@@ -1,5 +1,2 @@
-﻿  practical_problem.c
-  main.c
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\main.c(167,15): warning C4013: “compute”未定义；假设外部返回 int
-  正在生成代码...
+﻿  main.c
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe

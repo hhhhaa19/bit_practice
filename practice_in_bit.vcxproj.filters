@@ -117,6 +117,9 @@
     <ClCompile Include="practical_problem.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GCD.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

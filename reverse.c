@@ -47,3 +47,32 @@ void re_str(char str[])
 		right--;
 	}
 }
+void re_sentence(void)
+{
+	char* arr[1000] = { NULL };//储存每个单词的首地址
+	int i = 0;//句子的字符数
+	int m = 0;//单词个数
+	char sen[1000] = { 0 };//储存单个单词
+	int number[10] = { 0 };//统计每个单词的个数
+	while ((sen[i] = getchar()) != '.')//储存并判断内容
+	{
+		i++;
+		(number[m])++;//计数
+		if (sen[i - 1] == 32)//得到的是空格
+		{
+			arr[m] = (sen + i) - number[m];//找到首字母的地址
+			(number[m])--;//去除空格
+			m++;
+		}
+	}
+	arr[m] = (sen + i) - number[m];
+	(number[m])++;//最后一个单词以及句号
+	for (int i = m; i >= 0; i--)
+	{
+		for (int j = 0; j < number[i]; j++)
+		{
+			printf("%c", arr[i][j]);//输出单个单词
+		}
+		printf(" ");
+	}
+}
