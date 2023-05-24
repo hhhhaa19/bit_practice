@@ -164,6 +164,6 @@ int main()
 			printf("%d\n", i);
 	}
 	return 0;*/
-	printf("%d", sum_5(5));
+	printf("%d", compute(20,1));
 }
 

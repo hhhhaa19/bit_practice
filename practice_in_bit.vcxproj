@@ -138,6 +138,7 @@
     <ClCompile Include="mystrlen.c" />
     <ClCompile Include="my_print.c" />
     <ClCompile Include="pow.c" />
+    <ClCompile Include="practical_problem.c" />
     <ClCompile Include="reverse.c" />
     <ClCompile Include="special_number.c" />
     <ClCompile Include="Sum.c" />
