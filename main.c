@@ -172,9 +172,9 @@
 //	scanf("%d %d", &a, &b);
 //	printf("%d", mcm(a, b));
 //}
-char* arr[1000] = { NULL };
-int i = 0;
-int m = 0;
+//char* arr[1000] = { NULL };
+//int i = 0;
+//int m = 0;
 //void re_sten(char sen[])
 //{
 //	arr[m] = sen;
@@ -219,4 +219,10 @@ int m = 0;
 //	}
 //	return 0;
 //}
-
+int main()
+{
+	char str[] = "you";
+	printf("%d", my_strlen(str));
+	printf("%d", my_strlen2(str));
+	return 0;
+}

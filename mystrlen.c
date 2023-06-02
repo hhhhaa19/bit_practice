@@ -1,20 +1,20 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRT_SECURE_NO_WARNINGS 
+#include "main.h"
 //recursion
-int my_strlen(char* string)
+int my_strlen(const char* string)
 {
-	if (*string == '\0')
-		return 0;
+	assert(string != NULL);
+	if (*string)
+		return  1 + my_strlen(string + 1);
 	else
-		return 1 + my_strlen(string + 1);
+		return 0;
 }
 //本质指针，解引用
 //iteration 
-int my_strlen2(char* string)
+int my_strlen2(const char* string)
 {
+	assert(string != NULL);
 	int count = 0;
-	while (string[count] != '\0')
-	{
-		count++;
-	}
-	return count;
+	while (string[count++]);
+	return count-1;
 }

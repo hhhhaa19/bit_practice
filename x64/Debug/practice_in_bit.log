@@ -1,2 +1,4 @@
-﻿  main.c
+﻿  mystrlen.c
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\mystrlen.c(4,27): warning C4028: 形参 1 与声明不同
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\mystrlen.c(14,28): warning C4028: 形参 1 与声明不同
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe
