@@ -221,8 +221,12 @@
 //}
 int main()
 {
-	char str[] = "you";
-	printf("%d", my_strlen(str));
-	printf("%d", my_strlen2(str));
+	int str[] = { 2,3,4 };
+	int sz = sizeof(str) / sizeof(str[0]);
+	re_arr(str,sz);
+	for (int i = 0; i < sz ; i++)
+	{
+		printf("%d", str[i]);
+	}
 	return 0;
 }

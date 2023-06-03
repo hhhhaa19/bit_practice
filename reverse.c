@@ -76,3 +76,21 @@ void re_sentence(void)
 		printf(" ");
 	}
 }
+//输入一个整数数组，实现一个函数，来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
+
+//所有偶数位于数组的后半部分
+
+void re_arr(int* arr, int sz)
+{
+	int i = 0;
+	int j = 0;
+	//用选排的思路解决
+	for (i = 0; i < sz ; i++)
+	{
+		for (j = 0; j < sz-1 ; j++)
+		{
+			if (0==arr[j]%2&&1==arr[j+1]%2)
+				exchange2(&arr[j], &arr[j + 1]);
+		}
+	}
+}
