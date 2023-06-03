@@ -35,3 +35,4 @@ extern void merge(void);
 extern void printarr(int arr[], int  sz);
 extern void re_str(char str[]);
 extern int Narcissistic_num(int x);
+extern void re_sentence2(void);

@@ -35,16 +35,15 @@ void re_array(int* arr, int n)
 	for (i = 1; i <= n / 2; i++)
 		exchange(&arr[i - 1], &arr[n - i]);
 }
-void re_str(char str[])
+//逆序字符串，输入起始字符以及结束字符地址
+void re_str(char* str, char* end)
 {
-	int n = strlen(str);
-	int left = 0;
-	int right = n - 1;
-	while (left <= right)
+
+	while (str < end)
 	{
-		exchange2(&str[left], &str[right]);
-		left++;
-		right--;
+		exchange2(str, end);
+		str++;
+		end--;
 	}
 }
 void re_sentence(void)
@@ -54,6 +53,7 @@ void re_sentence(void)
 	int m = 0;//单词个数
 	char sen[1000] = { 0 };//储存单个单词
 	int number[10] = { 0 };//统计每个单词的个数
+	//gets可以得到字符串
 	while ((sen[i] = getchar()) != '.')//储存并判断内容
 	{
 		i++;
@@ -75,6 +75,28 @@ void re_sentence(void)
 		}
 		printf(" ");
 	}
+}
+//先逆序整个字符串，在逆序局部单词
+
+void re_sentence2(void)
+{
+	char str[100] = {0};
+	gets(str);
+	re_str(str, str +strlen(str) - 1);
+	char* star = str;
+	char* end = str;
+	while ('\0'!=*end)
+	{
+		end++;
+		if (*end == ' ')
+		{
+			re_str(star, end-1);
+			star = end+1;
+		}
+		
+	}
+	re_str(star, end -1);
+	printf("%s", str);
 }
 //输入一个整数数组，实现一个函数，来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
 

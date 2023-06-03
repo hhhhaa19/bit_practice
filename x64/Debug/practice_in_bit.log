@@ -3,7 +3,8 @@ D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(6,28):
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(17,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(36,12): warning C4133: “函数”: 从“int *”到“char *”的类型不兼容
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(36,25): warning C4133: “函数”: 从“int *”到“char *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(45,13): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(45,25): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(40,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(40,1): warning C4029: 声明的形参表不同于定义
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(44,13): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(44,18): warning C4133: “函数”: 从“char *”到“int *”的类型不兼容
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\reverse.c(84,2): warning C4013: “gets”未定义；假设外部返回 int
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe
