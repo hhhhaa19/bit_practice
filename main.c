@@ -219,15 +219,27 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	//int str[] = { 2,3,4 };
+//	//int sz = sizeof(str) / sizeof(str[0]);
+//	//re_arr(str,sz);
+//	//for (int i = 0; i < sz ; i++)
+//	//{
+//	//	printf("%d", str[i]);
+//	//}
+//	re_sentence2();
+//	return 0;
+//}
 int main()
 {
-	//int str[] = { 2,3,4 };
-	//int sz = sizeof(str) / sizeof(str[0]);
-	//re_arr(str,sz);
-	//for (int i = 0; i < sz ; i++)
-	//{
-	//	printf("%d", str[i]);
-	//}
-	re_sentence2();
+	for (int i = 0; i < 100000; i++)
+	{
+		if (Narcissistic_num(i) == 1)
+			printf("%d\n", i);
+
+	}
+
+
 	return 0;
 }

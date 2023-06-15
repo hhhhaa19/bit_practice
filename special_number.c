@@ -15,7 +15,7 @@ int Narcissistic_num(int x)
 	int a = 0;
 	for (a = i-1; a >= 0; a--)
 	{
-		ans = ans + pow(arr[a], 3);
+		ans = ans + pow(arr[a], i);
 	}
 	if (ans == temp)
 	{
