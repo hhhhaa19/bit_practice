@@ -134,14 +134,17 @@
     <ClCompile Include="DigitSum.c" />
     <ClCompile Include="exchange.c" />
     <ClCompile Include="fib.c" />
+    <ClCompile Include="function.c" />
     <ClCompile Include="GCD.c" />
     <ClCompile Include="issorted.c" />
+    <ClCompile Include="judge.c" />
     <ClCompile Include="mergesort.c" />
     <ClCompile Include="mystrlen.c" />
     <ClCompile Include="my_print.c" />
     <ClCompile Include="pow.c" />
     <ClCompile Include="practical_problem.c" />
     <ClCompile Include="reverse.c" />
+    <ClCompile Include="sort.c" />
     <ClCompile Include="special_number.c" />
     <ClCompile Include="Sum.c" />
     <ClCompile Include="times_formula_sheet.c" />

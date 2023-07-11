@@ -1,4 +1,6 @@
 #pragma once
+#define col 5//总共五排
+#define row 5//每排5个
 #include <math.h>
 #include <stdio.h>
 #include<string.h>
@@ -36,3 +38,5 @@ extern void printarr(int arr[], int  sz);
 extern void re_str(char str[]);
 extern int Narcissistic_num(int x);
 extern void re_sentence2(void);
+extern int is_increase(int(*arr)[col], int target);
+extern char* le_string(char* pstr, int k);

@@ -116,3 +116,62 @@ void re_arr(int* arr, int sz)
 		}
 	}
 }
+//实现一个函数，可以左旋字符串中的k个字符。
+//例如：ABCD左旋一个字符得到BCDA
+//ABCD左旋两个字符得到CDAB
+
+char* le_string(char* pstr, int k)
+//这里我们挑战不输入长度
+//分析下来recursion更好实现
+{
+	if (0 == k)
+	{
+		return pstr;
+	 }
+	else
+	{
+		le_string(strncat(pstr + 1, pstr, 1), k - 1);
+	}
+}
+//用itearation
+//这里在引入一个数组来避免末尾的'\0'被覆盖
+void le_string2(char* pstr, int k, int len)
+{
+	int i, j;
+	char temp[100];
+	for (j = 0; j < k; j++)
+	{
+		temp[j] = pstr[j];
+	}
+	for (j = 0; j < k; j++)
+	{
+		for (i = 0; i < k-j ;i++)//控制次数
+		{
+		*(pstr + i) = *(pstr + i + 1);
+		}
+	}
+	for (j = 0; j < k; j++)
+	{
+		pstr[j+len-k] = temp[j];
+	}
+}
+
+//写一个函数，判断一个字符串是否为另外一个字符串旋转之后的字符串。
+
+
+/*如：给定s1 = AABCD和s2 = BCDAA，返回1
+
+给定s1 = abcd和s2 = ACBD，返回0.*/
+int is_le_str(char* pstr, char* tag, int len)
+{
+	int i;
+	for (i = 0; i < len; i++)
+	{
+		char* ans = le_string(pstr, i);
+		if (0==strcmp(tag,ans))
+		{
+			return 1;
+		}
+	}
+	return 0;
+}

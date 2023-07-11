@@ -231,15 +231,63 @@
 //	re_sentence2();
 //	return 0;
 //}
-int main()
-{
-	for (int i = 0; i < 100000; i++)
-	{
-		if (Narcissistic_num(i) == 1)
-			printf("%d\n", i);
+//int main()
+//{
+//	for (int i = 0; i < 100000; i++)
+//	{
+//		if (Narcissistic_num(i) == 1)
+//			printf("%d\n", i);
+//
+//	}
+//
+//
+//	return 0;
+//}
+//test for is_increase
+//判断有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，请编写程序在这样的矩阵中查找某个数字是否存在。
+//1为存在；0为不存在
+//int main()
+//{
+//	int arr[col][row] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 };
+//	printf("%d", is_increase(arr, 29));
+//	return 0;
+// }
 
-	}
+//test for
+//实现一个函数，可以左旋字符串中的k个字符。
+//例如：ABCD左旋一个字符得到BCDA
+//ABCD左旋两个字符得到CDAB
+//报错！！！！！,原因是越界访问，扩大str后成功
+//用方法二成功
+//int main()
+//{
+//	char str[10] = "ABCD";
+//	int len = strlen(str);
+//	char *tag=le_string(str, 3);
+//	printf("%s", tag);
+//	return 0;
+//}
+
+////test for 
+////在屏幕上打印杨辉三角
+//int main()
+//{
+//	print_yan(5);
+//	return 0;
+//}
+
+//写一个函数，判断一个字符串是否为另外一个字符串旋转之后的字符串。
 
 
-	return 0;
-}
+/*如：给定s1 = AABCD和s2 = BCDAA，返回1
+
+给定s1 = abcd和s2 = ACBD，返回0.*/
+//int main()
+//
+//{
+//	char arr[12] = "abcd";
+//	char tag[12] = "bcad";
+//	int len = strlen(arr);
+//	printf("%d", is_le_str(arr,tag,len));
+//	return 0;
+//}

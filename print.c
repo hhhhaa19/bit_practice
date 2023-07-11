@@ -61,3 +61,40 @@ void pri_right_tri() {
 	}
 	return 0;
 }
+//排列组合
+// 输入nCm,输出结果
+int per_comb(int m, int n)
+{
+	int temp = 1;
+	int i = 0;
+	int j = 0;
+	if (m == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		for (i = n; i >n - m; i--)
+		{
+			temp = temp * i;
+		}
+		int temp2 = 1;
+		for (j = 1; j <= m; j++)
+		{
+			temp2 = temp2 * j;
+		}
+		return temp / temp2;
+	}
+}
+//在屏幕上打印杨辉三角
+void print_yan(int num)
+{
+	for (int i = 1; i <= num; i++)
+	{
+		for (int j = 0; j <= i-1; j++)
+		{
+			printf("%d ", per_comb(j, i-1));
+		}
+		printf("\n");
+	}
+}
