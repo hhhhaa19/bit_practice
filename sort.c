@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#include"main.h"
 //练习使用库函数，qsort排序各种类型的数据
 //！！！void qsort (void* base, size_t num, size_t size,int (*compar)(const void*, const void*))
 //qsort 函数内进行对int (*compar)(const void*, const void*)值进行处理
@@ -15,23 +16,23 @@ int cpar_int (const void* p1, const void* p2 )
 //	return 0;
 //}
 //结构体
-struct stu {
-	char name[10];
-	int age;
-};
-int cmp_stu_age(void* p1, void* p2)
-{
-	return ((struct stu*)p2)->age - ((struct stu*)p1)->age;
-}
-int cmp_stu_name(void* p1, void* p2)
-{
-	return strcmp(((struct stu*)p2)->name, ((struct stu*)p1)->name);
- }
-int main()
-{
-	struct stu stus[2] = { {"hh",10},{"aa",20} };
-	qsort(&stus,sizeof(stus)/sizeof(stus[1]),sizeof(stus[1]),cmp_stu_name);
-}
+//struct stu {
+//	char name[10];
+//	int age;
+//};
+//int cmp_stu_age(void* p1, void* p2)
+//{
+//	return ((struct stu*)p2)->age - ((struct stu*)p1)->age;
+//}
+//int cmp_stu_name(void* p1, void* p2)
+//{
+//	return strcmp(((struct stu*)p2)->name, ((struct stu*)p1)->name);
+// }
+//int main()
+//{
+//	struct stu stus[2] = { {"hh",10},{"aa",20} };
+//	qsort(&stus,sizeof(stus)/sizeof(stus[1]),sizeof(stus[1]),cmp_stu_name);
+//}
 
 //模仿qsort的功能实现一个通用的冒泡排序
 //交换
@@ -63,10 +64,5 @@ int main()
 //	}
 //}
 //
-//int main()
-//{
-//	int arr[10] = { 1,3,4,5,2,10,9,8,6,7 };
-//	Bsort(arr, sizeof(arr) / sizeof(arr[1]), sizeof(arr[1]), cpar_int);
-//	//
-//	return 0;
-//}
+
+

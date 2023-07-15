@@ -84,9 +84,6 @@
     <ClCompile Include="reverse.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="mystrlen.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="digital_pri.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -130,6 +127,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="function.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="string.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -290,4 +290,42 @@
 //	int len = strlen(arr);
 //	printf("%d", is_le_str(arr,tag,len));
 //	return 0;
+////}
+//int main()
+//{
+//	char str[] = "abbc";
+//	char str2[] = "bbc";
+//	char* ret = my_strstr(str, str2);
+//	if (ret != NULL)
+//	{
+//		printf("%s\n", ret);
+//	}
+//	else
+//	{
+//		printf("hh");
+//	}
+//	return 0;
 //}
+//int main()
+//{
+//	char arr [] = "hh";
+//	char arr2 [] = "jj";
+//	printf("%d", my_strcmp(arr, arr2));
+//}
+
+	
+	int main()
+
+	{
+
+		char str[10] = "ha";
+
+		char str2[] = "RRR";
+
+
+
+		printf("%s\n", my_strcat(str, str2));//为什么链式访问不行？？？？
+
+		return 0;
+
+	}
