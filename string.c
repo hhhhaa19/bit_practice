@@ -90,3 +90,112 @@ char* my_strstr( char* str1, char* str2)
 	}
 	return NULL;
 }
+
+//memcpy
+void* my_memcpy(void* des, const void* sou, size_t num)
+{
+	void* st = des;
+	while (num--)
+	{
+		*(char*)des = *(char*)sou;
+		des = (char*)des + 1;
+		sou = (char*)sou + 1;
+	}
+	return st;
+}
+//memmove
+void* my_memmove(void* des, const void* sou, size_t num)
+{
+	void* st = des;
+	if (des < sou)
+	{
+		while (num--)
+		{
+			*(char*)des = *(char*)sou;
+			des = (char*)des + 1;
+			sou = (char*)sou + 1;
+		}
+	}
+	else
+	{
+		while (num)
+		{
+			*((char*)des + num - 1) = *((char*)sou + num - 1);
+			num--;
+		}
+	}
+	return st;
+}
+//metset
+//strtok
+
+
+//一个数组中只有两个数字是出现一次，其他所有数字都出现了两次。
+
+//编写一个函数找出这两个只出现一次的数字。
+//例如：
+//有数组的元素是：1，2，3，4，5，1，2，3，4，6
+//只有5和6只出现1次，要找出5和6.
+
+void find_single(int arr[], int len,int* p1, int* p2)
+{
+	assert(arr && p1 && p2);
+	int i = 0;
+	int con = 2;
+	int count[10] = { 0 };
+	for (i = 0; i < len; i++)
+	{
+		count[arr[i]]++;
+	}
+	for (i = 0; i <= 10; i++)
+	{
+		if (count[i] == 1&&con==2)
+		{
+			*p1 = i; 
+			con--;
+		}
+		else if(count[i]==1&&con==1)
+		{
+			*p2 = i;
+		}
+	}
+}
+
+//strncpy
+char* my_strncpy(char* destination, const char* source, size_t num)
+{
+	int i = 0;
+	assert(destination && source);
+	for (i = 0; i < num; i++)
+	{
+		*(destination + i) = *(source + i);
+	}
+	return destination;
+}
+char* my_strncat(char* destination, const char* source, size_t num)
+{
+	int i = 0;
+	assert(destination && source);
+	int len = strlen(destination);
+	for (i = 0; i <num; i++)
+	{
+		*(destination + len + i) = *(source + i);
+	}
+
+	return destination;
+}
+
+//atoi
+int my_atoi(const char* str)
+{
+	int len = strlen(str);
+	int ret = 0;
+	for (int i = 0; i <len; i++)
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			ret = (int)str[i]- 48+ ret * 10;//墙砖变Acsll
+		}
+	}
+	return ret;
+}

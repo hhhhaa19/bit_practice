@@ -312,20 +312,54 @@
 //	char arr2 [] = "jj";
 //	printf("%d", my_strcmp(arr, arr2));
 //}
+//int main()
+//{
+//	int arr[10] = { 1,2,3 };
+//
+//	memset(arr, 10,4);
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("%d", arr[i]);
+//	}
+//	return 0;
+//}
 
-	
-	int main()
 
-	{
+//test for strtok
+//int main()
+//{
+//	char arr[] = "1844934155@qq.com";
+//		char tag[] = "@.";
+//		char* ret = NULL;
+//		for (ret = strtok(arr, tag); ret != NULL; ret = strtok(NULL, tag))
+//		{
+//			printf("%s", ret);
+//		}
+//
+//	return 0;
+//}
 
-		char str[10] = "ha";
+//tset for strerror
 
-		char str2[] = "RRR";
-
-
-
-		printf("%s\n", my_strcat(str, str2));//为什么链式访问不行？？？？
-
-		return 0;
-
-	}
+//int main()
+//{
+//	printf("%s\n", strerror(2));
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,2,3 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	int a = 0;
+//	int b = 0;
+//	int* p1 = &a;
+//	int* p2 = &b;
+//	find_single(arr, len, p1, p2);
+//}
+//test for my_strcpy
+int main()
+{
+	char str[10] = "  73";//长度要够
+	printf("%d",my_atoi(str));
+	return 0;
+}
