@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
 void P_struct(void)
 {
 	typedef struct stu
@@ -16,3 +17,4 @@ void P_struct(void)
 
 	
 }
+

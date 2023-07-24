@@ -49,3 +49,34 @@ extern void* my_memcpy(void* des, const void* sou, size_t num);
 char* my_strncpy(char* destination, const char* source, size_t num);
 char* my_strncat(char* destination, const char* source, size_t num);
 int my_atoi(const char* str);
+int find_single2(int* arr, int sz);
+void find_single(int arr[], int len, int* p1, int* p2);
+//结构体自引用
+typedef struct Node
+{
+	int data;
+	struct Node* p;
+}Node;
+//枚举的使用
+enum color
+{
+	red,
+	green,
+	bule,
+};
+//用宏来模拟offsetof
+#define OFFSETOF(type,member)  &(((type*)0)->member)
+//define结合#与##
+#define PRINT(FORMAR,VALUE) printf("the value of "#VALUE "is "FORMAR "\n",VALUE);
+#define	COMBILE(a,b) a##b
+//引号中的部分不被搜索，所以要有#，以及引号在外
+
+#undef OFFSETOF
+//现存的名字要被重新定义，就名字要被移除
+
+//柔性数组
+typedef struct Arr
+{
+	int i;
+	int a[];
+}Arr;

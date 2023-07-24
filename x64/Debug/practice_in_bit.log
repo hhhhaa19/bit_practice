@@ -1,8 +1,4 @@
-﻿  string.c
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(7,8): warning C4090: “初始化”: 不同的“const”限定符
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(16,30): warning C4028: 形参 1 与声明不同
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(26,31): warning C4028: 形参 1 与声明不同
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(64,8): warning C4047: “初始化”:“char *”与“char”的间接级别不同
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(179,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\string.c(191,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  Bit_operator.c
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\Bit_operator.c(23,27): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\Bit_operator.c(33,31): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe

@@ -137,29 +137,7 @@ void* my_memmove(void* des, const void* sou, size_t num)
 //有数组的元素是：1，2，3，4，5，1，2，3，4，6
 //只有5和6只出现1次，要找出5和6.
 
-void find_single(int arr[], int len,int* p1, int* p2)
-{
-	assert(arr && p1 && p2);
-	int i = 0;
-	int con = 2;
-	int count[10] = { 0 };
-	for (i = 0; i < len; i++)
-	{
-		count[arr[i]]++;
-	}
-	for (i = 0; i <= 10; i++)
-	{
-		if (count[i] == 1&&con==2)
-		{
-			*p1 = i; 
-			con--;
-		}
-		else if(count[i]==1&&con==1)
-		{
-			*p2 = i;
-		}
-	}
-}
+
 
 //strncpy
 char* my_strncpy(char* destination, const char* source, size_t num)
@@ -190,12 +168,17 @@ int my_atoi(const char* str)
 {
 	int len = strlen(str);
 	int ret = 0;
+	int flag = 1;
 	for (int i = 0; i <len; i++)
 	{
 		if (str[i] >= '0' && str[i] <= '9')
 		{
 			ret = (int)str[i]- 48+ ret * 10;//墙砖变Acsll
 		}
+		else if (str[i] == '-')
+		{
+			flag = -1;
+		}
 	}
-	return ret;
+	return ret*flag;
 }

@@ -357,9 +357,81 @@
 //	find_single(arr, len, p1, p2);
 //}
 //test for my_strcpy
+//int main()
+//{
+//	char str[10] = "  73";//长度要够
+//	printf("%d",my_atoi(str));
+//	return 0;
+//}
+//int main() {
+//	char str[100] = { 0 };
+//	char str2[100] = { 0 };
+//	fgets(str, 100, stdin);
+//	fgets(str2, 100, stdin);
+//	int len = strlen(str2);
+//	//提前去除空格防止后续把str中空格删了
+//	for (int i = 0; i < len; i++)
+//	{
+//		if (str2[i] == ' ')
+//		{
+//			memmove(str2 + i, str2 + i + 1, 4 * (len - i - 1));
+//		}
+//	}
+//	char* temp = NULL;
+//	for (temp = strtok(str, str2); temp != NULL; temp = strtok(NULL, str2))
+//	{
+//		printf("%s", temp);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = red;//利用枚举常量赋值
+//	enum color temp = red;//枚举变量如何使用
+//	printf("%d", OFFSETOF(Node, data));
+//	return 0;
+//}
+#if 0
 int main()
 {
-	char str[10] = "  73";//长度要够
-	printf("%d",my_atoi(str));
+	float ab = 1.0f;
+	PRINT("%f", COMBILE(a, b));
 	return 0;
 }
+#endif
+#if 0
+int main()
+{
+	int i = 0;
+	Arr* pa = (Arr*)malloc(sizeof(Arr) + 10*sizeof(int));
+	if (pa == NULL)
+	{
+		perror("malloc");
+	}
+	pa->i = 10 ;
+	for (i = 0; i < pa->i; i++)
+	{
+		pa->a[i] = i + 1;
+		printf("%d\n", pa->a[i]);
+	}
+	return 0;
+}
+#endif
+#if 0
+int main()
+{
+	printf("%d", my_atoi("   +123"));
+	return 0;
+}
+#endif
+#if 1
+int main()
+{
+	int arr[6] = { 1,1,2,2,3,4};
+	int p1 = 0;
+	int p2 = 0;
+	find_single(arr,sizeof(arr)/sizeof(arr[1]),&p1,&p2);
+	return 0;
+}
+#endif

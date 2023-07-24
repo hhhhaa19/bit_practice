@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="binaryoddeven.c" />
+    <ClCompile Include="Bit_operator.c" />
     <ClCompile Include="countbinary.c" />
     <ClCompile Include="diffinbin.c" />
     <ClCompile Include="digital_pri.c" />
     <ClCompile Include="DigitSum.c" />
     <ClCompile Include="exchange.c" />
     <ClCompile Include="fib.c" />
+    <ClCompile Include="file.c" />
     <ClCompile Include="function.c" />
     <ClCompile Include="GCD.c" />
     <ClCompile Include="issorted.c" />
@@ -169,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
