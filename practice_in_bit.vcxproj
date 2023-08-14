@@ -149,6 +149,7 @@
     <ClCompile Include="special_number.c" />
     <ClCompile Include="string.c" />
     <ClCompile Include="Sum.c" />
+    <ClCompile Include="summer_work.c" />
     <ClCompile Include="times_formula_sheet.c" />
     <ClCompile Include="binary_search.c" />
     <ClCompile Include="bissextile.c" />

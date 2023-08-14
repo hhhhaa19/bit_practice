@@ -138,6 +138,9 @@
     <ClCompile Include="Bit_operator.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="summer_work.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

@@ -18,6 +18,8 @@ void find_single(int arr[], int len, int* p1, int* p2)
 	int pos = 0;
 	int temp = find_single2(arr,len);
 	//找到第几位为1，说明两个single在这一位不同，以这一位去找
+	//^0,不对原数有影响
+	//(temp>>i)&1取出每一位
 	for (i = 0; i < 32; i++)
 	{
 		if ((temp >> i) & 1 == 1)
