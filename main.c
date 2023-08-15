@@ -425,13 +425,22 @@ int main()
 	return 0;
 }
 #endif
-#if 1
+#if 0
 int main()
 {
 	int arr[6] = { 1,1,2,2,3,4};
 	int p1 = 0;
 	int p2 = 0;
 	find_single(arr,sizeof(arr)/sizeof(arr[1]),&p1,&p2);
+	return 0;
+}
+#endif
+#if 1
+int main()
+{
+	int test = 10;
+	char arr = (char)test;
+	printf("%s", arr);
 	return 0;
 }
 #endif

@@ -36,3 +36,11 @@ int transdate(int year, int date, int month)
 
     return daynum;
 }
+//验证尼科彻斯定理，即：任何一个整数m的立方都可以写成m个连续奇数之和。
+//输入一个正整数m（m≤100），将m的立方写成m个连续奇数之和的形式输出。
+//输出分解后的string
+char* Nikos(int num)
+{
+    int tag = pow(num, 3);
+    int mid = tag / num;
+}
