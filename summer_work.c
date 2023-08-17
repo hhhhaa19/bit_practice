@@ -39,8 +39,132 @@ int transdate(int year, int date, int month)
 //验证尼科彻斯定理，即：任何一个整数m的立方都可以写成m个连续奇数之和。
 //输入一个正整数m（m≤100），将m的立方写成m个连续奇数之和的形式输出。
 //输出分解后的string
-char* Nikos(int num)
+//方法1：直接打印
+void Nikos(int num)
 {
     int tag = pow(num, 3);
     int mid = tag / num;
+    if (mid % 2 == 0)//偶数个
+    {
+        int i = num/2;
+        while (i)
+        {
+            printf("%d+", mid + 1 - i * 2);
+            i--;
+        }
+        i = 0 ;
+        while (i<num/2-1)
+        {
+            printf("%d+", mid + 1 + i * 2);
+            i++;
+        }
+        printf("%d", mid + 1 + i * 2);
+    }
+    else
+    {
+        int i = num / 2;
+        while (i)
+        {
+            printf("%d+", mid  - i * 2);
+            i--;
+        }
+        i = 0;
+        while (i < num / 2 )
+        {
+            printf("%d+", mid  + i * 2);
+            i++;
+        }
+        printf("%d", mid  + i * 2);
+    }
+}
+//方法2：用sprintf存
+char* Nikos2(int num)
+{
+
+}
+//等差数列 2，5，8，11，14。。。。
+//（从 2 开始的 3 为公差的等差数列）
+//输出求等差数列前n项和
+int evendiff(int n)
+{
+    int ret = 0;
+    int add = 2;//加数
+    while (n--)
+    {
+        ret += add;
+        add += 3;
+    }
+    return ret;
+}
+
+//首先输入要输入的整数个数n，然后输入n个整数。输出为n个整数中负数的个数，和所有正整数的平均值，结果保留一位小数。
+//0即不是正整数，也不是负数，不计入计算。如果没有正数，则平均值为0。
+void  ave_num(int num, int* arr, int* negnum,int* plusnum,int* sum)
+{
+    *negnum = 0;
+    *plusnum = 0;
+    *sum = 0;
+    int i = 0;//下标
+    while (i<num)
+    {
+        if (arr[i] < 0)
+        {
+            (*negnum)++;
+        }
+        else if(arr[i]>0)
+        {
+            (*plusnum)++;
+            *sum += arr[i];
+        }
+        i++;
+    }
+}
+//有一个长度为 n 的非降序数组，比如[1, 2, 3, 4, 5] ，将它进行旋转，即把一个数组最开始的若干个元素搬到数组
+//的末尾，变成一个旋转数组，比如变成了[3, 4, 5, 1, 2] ，或者[4, 5, 1, 2, 3] 这样的。请问，给定这样一个旋转数组，求数
+//组中的最小值。
+//首先如果用直接遍历时间复杂度为O(N),失去了有序的意义，所以这里使用二分法，时间复杂度为O(logN)
+int minNumberInRotateArray(int* nums, int numsLen) {
+    int left = 0;
+    int right = numsLen - 1;
+    int mid = (left + right + 1) / 2;
+    //尾巴上加一个1000,防止溢出
+    nums[numsLen] = 10000;
+    while (left <= right)
+    {
+        mid = (left + right + 1) / 2;
+        if (nums[mid] > nums[mid + 1])
+            return nums[mid + 1];
+        if (nums[mid] <= nums[right])
+        {
+            right = mid - 1;
+        }
+        else
+        {
+            left = mid + 1;
+        }
+    }
+    return nums[left];
+}
+//集合s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
+//给定一个数组 nums 代表了集合 S 发生错误后的结果。
+//请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
+int* findErrorNums(int* nums, int numsSize, int* returnSize)
+{
+//找重复
+    //总思路：a=a^b;b=a^b;a=a^b;交换的思路
+    int tep = 0;
+    int sum = 0;
+    int tepsum = 0;
+    for (int i = 1; i <= numsSize; i++)
+    {
+        tep ^= i;
+        sum += i;
+    }
+    for (int j = 0; j < numsSize; j++)
+    {
+        tep ^= nums[j];
+        tepsum += nums[j];
+    }
+    int loss = sum - (tepsum - tep);
+    int* ans[2] = { tep, loss };
 }

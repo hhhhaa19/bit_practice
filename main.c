@@ -436,11 +436,23 @@ int main()
 }
 #endif
 #if 1
-int main()
-{
-	int test = 10;
-	char arr = (char)test;
-	printf("%s", arr);
+void  ave_num(int num, int* arr, int* negnum, int* plusnum, int* sum);
+int main() {
+	int num, negnum, plusnum, sum = 0;
+	int arr[2000] = { 0 };
+	scanf("%d", &num);
+	int i = num;
+	while (i)
+	{
+		scanf("%d", &arr[num - i]);
+		i--;
+	}
+	ave_num(num, arr, &negnum, &plusnum, &sum);
+	printf("%d ", negnum);
+	if (plusnum != 0)
+		printf("%.1f",(double)sum / plusnum);
+	else
+		printf("0.0");
 	return 0;
 }
 #endif
