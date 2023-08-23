@@ -1,3 +1,5 @@
-﻿  main.c
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\main.c(453,10): warning C4477: “printf”: 格式字符串“%.1f”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
+﻿  summer_work.c
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(9,26): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(45,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(84): warning C4716: “Nikos2”: 必须返回一个值
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe

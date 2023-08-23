@@ -126,21 +126,22 @@ void  ave_num(int num, int* arr, int* negnum,int* plusnum,int* sum)
 int minNumberInRotateArray(int* nums, int numsLen) {
     int left = 0;
     int right = numsLen - 1;
-    int mid = (left + right + 1) / 2;
+    int mid = left + (right - left) / 2;
     //尾巴上加一个1000,防止溢出
-    nums[numsLen] = 10000;
     while (left <= right)
     {
         mid = (left + right + 1) / 2;
-        if (nums[mid] > nums[mid + 1])
-            return nums[mid + 1];
-        if (nums[mid] <= nums[right])
+        if (nums[mid] < nums[right])
         {
-            right = mid - 1;
+            left = mid + 1;
+        }
+        else if(nums[mid]>nums[right])
+        {
+            right = mid ;
         }
         else
         {
-            left = mid + 1;
+            right--;
         }
     }
     return nums[left];
@@ -150,6 +151,7 @@ int minNumberInRotateArray(int* nums, int numsLen) {
 //请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
 int* findErrorNums(int* nums, int numsSize, int* returnSize)
 {
+#if 0
 //找重复
     //总思路：a=a^b;b=a^b;a=a^b;交换的思路
     int tep = 0;
@@ -167,4 +169,69 @@ int* findErrorNums(int* nums, int numsSize, int* returnSize)
     }
     int loss = sum - (tepsum - tep);
     int* ans[2] = { tep, loss };
+    //这种方式把两个剔除来
+#endif
+    //因为不支持变长数组，我们选择创空间，并
+    int* arr = (int*)calloc(numsSize,sizeof(int));
+    int* ret = (int*)calloc(2,sizeof(int));
+    //这里相当于桶排
+    int i = 0;
+    int sum = 0;
+    int realsum = 0;
+    for (i = 0; i < numsSize; i++)
+    {
+        arr[nums[i]]++;
+        if (arr[nums[i]] == 2)
+        {
+            ret[1] = nums[i];
+        }
+        sum += nums[i];
+        realsum += i;
+    }
+    ret[2] = realsum - (sum - ret[1]);
+    return ret;
+}
+//
+//小明同学最近开发了一个网站，在用户注册账户的时候，需要设置账户的密码，为了加强账户的安全性，小明对密码强度有一定要求：
+//1. 密码只能由大写字母，小写字母，数字构成；
+//2. 密码不能以数字开头；
+//3. 密码中至少出现大写字母，小写字母和数字这三种字符类型中的两种；
+//4. 密码长度至少为8
+//现在小明受到了n个密码，他想请你写程序判断这些密码中哪些是合适的，哪些是不合法的。
+int islegal(char* str)
+{
+    int len = (int)strlen(str);
+    if (len < 8)
+        return -1;
+    int type[3] = { 0 };
+    for (int i = 0; i < len; i++)
+    {
+        char temp = str[i];
+        if (0 == i && (temp >= '0' && temp <= '9'))
+        {
+            return -1;
+        }
+        if ((temp >= '0' && temp <= '9') || (temp >= 'a' && temp <= 'z') || (temp >= 'A' && temp <= 'Z'))
+        {
+            if (temp >= '0' && temp <= '9')
+                type[0] = 1;
+            if (temp >= 'a' && temp <= 'z')
+                type[1] = 1;
+            if (temp >= 'A' && temp <= 'Z')
+                type[2] = 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+    int sum = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        sum += type[i];
+    }
+    if (sum >= 2)
+        return 0;
+    else
+        return -1;
 }

@@ -435,7 +435,7 @@ int main()
 	return 0;
 }
 #endif
-#if 1
+#if 0
 void  ave_num(int num, int* arr, int* negnum, int* plusnum, int* sum);
 int main() {
 	int num, negnum, plusnum, sum = 0;
@@ -453,6 +453,26 @@ int main() {
 		printf("%.1f",(double)sum / plusnum);
 	else
 		printf("0.0");
+	return 0;
+}
+#endif
+#if 1
+int main() {
+	int n = 0;
+	scanf("%d", &n);
+	while (n--)
+	{
+		char str[100] = { 0 };
+		scanf("%s", str);
+		if (islegal(str) == -1)
+		{
+			printf("NO\n");
+		}
+		else
+		{
+			printf("YES\n");
+		}
+	}
 	return 0;
 }
 #endif
