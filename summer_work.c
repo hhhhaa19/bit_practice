@@ -235,3 +235,61 @@ int islegal(char* str)
     else
         return -1;
 }
+//给定一个长度为 n 的非降序数组和一个非负数整数 k ，要求统计 k 在数组中出现的次数
+//要求：空间复杂度
+//O(1)，时间复杂O(logn)
+int GetNumberOfK(int* nums, int numsLen, int k) {
+    int left = 0;
+    int right = numsLen - 1;
+    int mid = left + (right - left+1) / 2;
+    while (left <= right)
+    {
+        mid = left + (right - left+1) / 2;
+        if (nums[mid] > k)
+            right = mid - 1;
+        else
+            left = mid + 1;
+    }//找相同数的右端
+    int tagright = left - 1;
+    left = 0;
+     right= numsLen - 1;
+     mid = left + (right - left+1) / 2;
+    while (left <= right)
+    {
+        mid = left + (right - left+1) / 2;
+        if (nums[mid] >=k)
+            right = mid - 1;
+        else
+            left = mid + 1;
+    }//相同数的左端
+    int tagleft = right + 1;
+    return tagright - tagleft + 1;
+}
+//整数转换。编写一个函数，确定需要改变几个位才能将整数A转成整数B。
+//位操作符
+int convertInteger(int A, int B) 
+{
+#if 0
+    int ret = 0;
+    //先异或两个数，然后一位位取出其中的1
+    int xor = A ^ B;
+    while (xor)
+    {
+        if (xor &1)//与1结果为1说明本身是1，说明A和B在这一位不同
+            ret++;
+        xor >>= 1;
+    }
+    return ret;
+#endif
+    //我们来看上面这个代码，他是一个典型的错误代码，他的结果是死循环，原因是右移操作符分为算数右移运算，算数右移时是用符号位填充的，而逻辑右移是用0填充的，oj时不断填充1导致死循环，而左移则是统一填0
+    //修改时我们要限定位数
+    int count = 0;
+    int xor= A ^ B;
+    for (int i = 0; i <= 31; i++)
+    {
+        if (xor &1)
+            count++;
+        xor >>= 1;
+    }
+    return count;
+}
