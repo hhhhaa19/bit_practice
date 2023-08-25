@@ -293,3 +293,58 @@ int convertInteger(int A, int B)
     }
     return count;
 }
+//给你一个整数数组 nums ，其中总是存在 唯一的 一个最大整数 。
+//请你找出数组中的最大元素并检查它是否 至少是数组中每个其他数字的两倍 。如果是，则返回 最大元素的下标 ，否则返回 - 1 。
+int dominantIndex(int* nums, int numsSize)
+{
+    int i = numsSize-1;
+    int maxindex = 0;
+    while (i>=0)
+    {
+        if (nums[i] > nums[maxindex])
+            maxindex=i;
+        i--;
+    }
+    i = numsSize - 1;
+    while (i >= 0)
+    {
+        if (i != maxindex)
+        {
+            if (nums[maxindex] < nums[i] * 2)
+                return -1;
+        }
+        i--;
+    }
+    return maxindex;
+}
+//给定两个数组 nums1 和 nums2 ，返回 它们的交集 。输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。
+int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize)
+{
+    int i, j;
+    int max = (nums1Size > nums2Size ? nums1Size : nums2Size);
+    int* ret = (int*)malloc(sizeof(int) * max);
+    int k = 0;
+    *returnSize++;
+    for (i = 0; i < nums1Size; i++)
+    {
+        for (j = 0; j < nums1Size; j++)
+        {
+            if (nums1[i] == nums2[j])
+            {
+                int m;
+                for ( m = k-1; m >= 0; m--)
+                {
+                    if (ret[m] == nums1[i])
+                        break;
+                }
+                if (m == -1)
+                {
+                    *returnSize++;
+                    ret[k] = nums1;
+                    k++;
+                }
+            }
+        }
+    }
+    return ret;
+}
