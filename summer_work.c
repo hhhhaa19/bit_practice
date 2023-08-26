@@ -324,7 +324,7 @@ int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* ret
     int max = (nums1Size > nums2Size ? nums1Size : nums2Size);
     int* ret = (int*)malloc(sizeof(int) * max);
     int k = 0;
-    *returnSize++;
+    *returnSize=0;
     for (i = 0; i < nums1Size; i++)
     {
         for (j = 0; j < nums1Size; j++)
@@ -339,12 +339,67 @@ int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* ret
                 }
                 if (m == -1)
                 {
-                    *returnSize++;
-                    ret[k] = nums1;
+                    (*returnSize)++;
+                    ret[k] = nums1[i];
                     k++;
                 }
             }
         }
     }
     return ret;
+}
+//Lily上课时使用字母数字图片教小朋友们学习英语单词，每次都需要把这些图片按照大小（ASCII码值从小到大）排列收好。请大家给Lily帮忙，通过代码解决。
+//Lily使用的图片使用字符"A"到"Z"、"a"到"z"、"0"到"9"表示。
+int charcmp (const void* p1, const void* p2)
+{
+    return *((int*)p1) - *((int*)p2);
+}
+void sort_ASCLL(char* str)
+{
+    //这里我们复习一下qsort和冒泡
+  //qsort
+#if 1
+    int len = strlen(str);
+    qsort(str,len,sizeof(char),charcmp);
+#endif
+    //冒泡
+    int len = strlen(str);
+    for (int i = 0; i < len - 1; i++)
+    {
+        for (int j = 0; j < len-i-1; j++)
+        {
+
+            if (str[j] > str[j + 1])
+            {
+                char temp = str[j+1];
+                str[j + 1] = str[j];
+                str[j] = temp;
+            }
+        }
+    }
+}
+//给你一个整数数组 nums ，请计算数组的 中心下标 。
+//数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。
+//如果中心下标位于数组最左端，那么左侧数之和视为 0 ，因为在下标的左侧不存在元素。这一点对于中心下标位于
+//数组最右端同样适用
+int sum(int* nums, int left, int right)
+{
+    int sum = 0;
+    for (int i = left; i <= right; i++)
+    {
+        sum += nums[i];
+    }
+    return sum;
+}
+int pivotIndex(int* nums, int numsSize) 
+{
+    int index = 0;
+    for (int i = 0; i < numsSize; i++)
+    {
+        int sumleft = sum(nums, 0, i-1);
+        int sumright = sum(nums, i + 1, numsSize - 1);
+        if (sumleft == sumright)
+            return i;
+    }
+    return -1;
 }
