@@ -481,3 +481,36 @@ int majorityElement(int* nums, int numsSize)
     if (sum > 0)
         return cur;
 }
+//例如，128 是一个 自除数 ，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。
+//自除数 不允许包含 0 。
+int isself(int n);
+int isself(int n)
+{
+    int num = n;
+    int div = num % 10;
+    while (num)
+    {
+        if (div == 0)
+            return -1;
+        if (n % div != 0)
+
+            return -1;
+        num /= 10;
+        div = num % 10;
+
+    }
+    return 1;
+}
+int* selfDividingNumbers(int left, int right, int* returnSize)
+{
+    *returnSize = 0;
+    int* ret = (int*)calloc(right - left + 1,sizeof(int));
+    for (int i = left; i <= right; i++)
+    {
+        if (isself(i) == 1)
+        {
+            ret[(*returnSize)++] = i;
+        }
+    }
+    return ret;
+}
