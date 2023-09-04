@@ -514,3 +514,93 @@ int* selfDividingNumbers(int left, int right, int* returnSize)
     }
     return ret;
 }
+//给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。
+//题目数据 保证 数组 nums之中任意元素的全部前缀元素和后缀的乘积都在  32 位 整数范围内。
+//解析：将乘积分为两次进行，第一次先将每个位置左边的数据乘积计算出来放到返回数组中，后边第二次循环
+//将对应位置右边的数据乘积计算出来与返回数组对应位置的左半边乘积相乘得到结果
+int* productExceptSelf(int* nums, int numsSize, int* returnSize)
+{
+    int* multileft = (int*)malloc(sizeof(int)*numsSize);
+    int* multiright = (int*)malloc(sizeof(int) * numsSize);
+    int* ret = (int*)malloc(sizeof(int) * numsSize);
+
+    *returnSize = numsSize;
+    int left = 1;//暂存前一个的值，避免重复计算
+    //计算左侧的乘积
+    for (int i = 0; i < numsSize; i++)
+    {
+        multileft[i] = left ;
+        left *= nums[i];
+    }
+    int right = 1;
+    //计算右侧的乘积,用倒着的方式可以避免除法
+    for (int i = numsSize-1; i >=0; i--)
+    {
+        multiright[i] = right;
+        left *= nums[i];
+    }
+    for (int i = 0; i < numsSize; i++)
+    {
+        ret[i] = multileft[i] * multiright[i];
+    }
+    return ret;
+}
+//写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
+//二进制相加思想：与十进制相同，先计算不考虑进位的相加结果（ 0 + 0 得 0 ， 1 + 1 进位得 0 ， 1 + 0 得 1 ），使用
+//异或可以取得； 然后计算相加的进位结果（同 1 的位置左移一位即可），使用相与后左移取得。
+//示例5 0101 + 7 0111
+//不考虑进位的相加结果 0101 ^ 0111 -> 0010
+//相加的进位 0101 & 0111 -> 0101 因为进位左移得到 1010
+//1010 + 0010
+//不考虑进位的相加结果 1010 ^ 0010 -> 1000
+//相加的进位 1010 & 0010 -> 0010 因为进位左移得到 0100
+//1000 + 0100
+//不考虑进位的相加结果 1000 ^ 0100 -> 1100
+//相加的进位 1000 & 0100 -> 0000 进位为0结束运算
+int Add(int num1, int num2) 
+{
+    int ans = 0;
+    int cans = (num1 & num2) << 1;//carry bit ans
+    int ucans = (num1 ^ num2);
+    while (cans)
+    {
+        int temp = cans & ucans;
+        ucans = cans ^ ucans;
+        cans = temp;
+        cans <<= 1;
+    }
+    return ucans;
+}
+//给你一个含 n 个整数的数组 nums ，其中 nums[i] 在区间 [1, n] 内。请你找出所有在 [1, n] 范围内但没有出
+//现在 nums 中的数字，并以数组的形式返回结果
+//思路：下标与数字的高度重叠
+//[2, 3, 3, 2, 4] 注意数组10个元素，值为[1 - 10]， 但是访问下标应该在[0 - 9]之内, 因此修改位置下标应该是值 - 1
+//0号元素是2，则将1号位置置为对应负值[2, -3, 3, 2, 4]
+//1号元素是3，则将2号位置置为对应负值[2, -3, -3, 2, 4]
+//2号元素是 - 3，绝对值为3，将2号位置为负值，但是2号位已经重置过，不需要重置，否则会变正数[2, -3, -3, 2, 4]
+//3号元素是 - 2，绝对值为2，将1号位置为负值，但是1号位已经重置过，不需要重置，否则会变正数[2, -3, -3, 2, 4]
+//4号元素是4，则将3号位置置为对应负值[2, -3, -3, -2, 4]
+//遍历数组得到0, 4两个位置的数据是大于0的，因为人家数值从1开始，因此 + 1后得到1， 5两个缺失的数字
+// 下标与【1-n】的重合
+//首先利用数据本身的正负来展现是否出现过，为正说明没有遍历到，即index中没有这个数，也就是下标的缺失，由于下标与【1-n】的重合，所以对应下标的缺失也就是对应数的缺失
+//老师发作业，每个人发到作业，但作业不一定是自己的，但只要把其交给对应的人，那么每个人
+//都有能有自己的作业。此时就明白谁没有作业了
+int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) 
+{
+    *returnSize = 0;
+    int* ret = (int*)malloc(sizeof(int) * numsSize);
+    for (int i = 0; i < numsSize; i++)
+    {
+        int index = abs(nums[i]) - 1;
+        nums[index] = (nums[index] > 0 ? (-nums[index]) : (nums[index]));
+    }
+    for (int i = 0; i < numsSize; i++)
+    {
+        if (nums[i] > 0)
+        {
+            ret[*returnSize] = i + 1;
+            (*returnSize)++;
+        }
+    }
+    return ret;
+}
