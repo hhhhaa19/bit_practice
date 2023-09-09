@@ -363,7 +363,7 @@ void sort_ASCLL(char* str)
     qsort(str,len,sizeof(char),charcmp);
 #endif
     //冒泡
-    int len = strlen(str);
+   // int len = strlen(str);
     for (int i = 0; i < len - 1; i++)
     {
         for (int j = 0; j < len-i-1; j++)
@@ -603,4 +603,273 @@ int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize)
         }
     }
     return ret;
+}
+//给定一个二进制数组 nums ， 计算其中最大连续 1 的个数。
+int findMaxConsecutiveOnes(int* nums, int numsSize)
+{
+    int count = 0;
+    int max = 0;
+    int cur = 0;
+    while (cur < numsSize)
+    {
+        if (nums[cur] == 1)
+        {
+            count++;
+        }
+        else
+        {
+            if (count > max)
+            max = count;
+            count=0;
+        }
+        cur++;
+    }
+    if (count > max)
+        max = count;
+    return max;
+}
+//完全数（Perfect number），又称完美数或完备数，是一些特殊的自然数。
+//它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。
+//例如：28，它有约数1、2、4、7、14、28，除去它本身28外，其余5个数相加，1 + 2 + 4 + 7 + 14 = 28。
+int isperfect(int n)
+{
+    int sum = 0;
+    for (int i = 1; i < (int)sqrt(n) + 1; i++)
+    {
+        if (n % i == 0)
+        {
+            sum += i;
+            sum += n / i;
+        }
+    }
+    if (sum == 2 * n)
+        return 1;
+    else
+        return 0;
+}
+//输入一个整数，将这个整数以字符串的形式逆序输出
+//程序不考虑负数的情况，若数字含有0，则逆序形式也含有0，如输入为100，则输出为001
+void restr(char* arr,int len)
+{
+    int i = 0;
+    while (i < len / 2)
+    {
+        char temp = arr[i];
+        arr[i] = arr[len - i - 1];
+        arr[len - i - 1] = temp;
+    }
+}
+//char* reitoa(int n)
+//{
+//    char* arr = (char*)calloc(33, sizeof(char));
+//    itoa(n, arr, 10);
+//    restr(arr,strlen(arr));
+//    return arr;
+//}
+//对字符串中的所有单词进行倒排。
+//说明：
+//1、构成单词的字符只有26个大写或小写英文字母；
+//2、非构成单词的字符均视为单词间隔符；
+//3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；
+//4、每个单词最长20个字母；
+char* resentence(char* arr)
+{
+    char* newarr = (char*)calloc(10000, sizeof(char));
+    int len = strlen(arr);
+    int i = len;
+    int m = 0;
+    while (i)
+    {
+        if (arr[i] >= 'A' && arr[i] <= 'Z' || arr[i] >= 'a' && arr[i] <= 'z')
+        {
+            newarr[m] = arr[i];
+            m++;
+            i--;
+        }
+        else
+        {
+            while ((!(arr[i] >= 'A' && arr[i] <= 'Z' || arr[i] >= 'a' && arr[i] <= 'z'))&& i>0)
+            {
+                i--;
+            }
+            m++;
+            newarr[m] = ' ';
+        }
+    }
+    int newlen = strlen(newarr);
+    int start = 0;
+    i = 0;
+    int end = 0;
+    while (i < newlen)
+    {
+        if (arr[i] == ' ')
+        {
+            end = i;
+            restr(newarr + start, end - start);
+            start = end+1;
+        }
+        i++;
+    }
+    restr(newarr + start, i - start + 1);
+    return newarr;
+
+}
+//计算机有4个槽，每个槽放一个球，颜色可能是红色（R）、黄色（Y）、绿色（G）或蓝色（B）。例如，计算机可能有RGGB 4种（槽1为红色，槽2、3为绿色，槽4为蓝色）。作为用户，你试图猜出颜色组合。打个比方，你可能会猜YRGB。要是猜对某个槽的颜色，则算一次“猜中”；
+//要是只猜对颜色但槽位猜错了，则算一次“伪猜中”。注意，“猜中”不能算入“伪猜中”。
+int* masterMind(char* solution, char* guess, int* returnSize) 
+{
+   
+        int* ret = (int*)calloc(2, sizeof(int));
+        *returnSize = 2;
+        int len = strlen(solution);
+        int sol[4][4] = { 0 };//位数，颜色
+        int ges[4][4] = { 0 };
+        for (int i = 0; i < 4; i++)
+        {
+            if (*(solution + i) == 'R')
+                sol[i][0] = 1;
+            else if (*(solution + i) == 'Y')
+                sol[i][1] = 1;
+            else if (*(solution + i) == 'G')
+                sol[i][2] = 1;
+            else
+                sol[i][3] = 1;
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            if (*(guess + i) == 'R')
+                ges[i][0] = 1;
+            else if (*(guess + i) == 'Y')
+                ges[i][1] = 1;
+            else if (*(guess + i) == 'G')
+                ges[i][2] = 1;
+            else
+                ges[i][3] = 1;
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (sol[i][j] == 1 && ges[i][j] == 1)
+                    ret[0]++;
+            }
+
+        }
+        int solsum[4] = { 0 };
+        int gessum[4] = { 0 };
+
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                solsum[j] += sol[i][j];
+                gessum[j] += ges[i][j];
+
+            }
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            if (gessum[i] != 0 && solsum[i] != 0)
+                ret[1] += gessum[i] > solsum[i] ? solsum[i] : gessum[i];
+        }
+        ret[1] -= ret[0];
+        return ret;
+    }
+
+
+int fun(char* s)
+{
+    char* t = s;
+    while (*t++);
+    return(t - s);
+}
+//现在有一个长度为 n 的正整数序列，其中只有一种数值出现了奇数次，其他数值均出现偶数次，请你找出那个出现奇数次的数值。
+int findodd(int len, int* nums)
+{
+    int ans = 0;
+    int i = 0;
+    while (i < len)
+    {
+        ans ^= nums[i];
+        i++;
+    }
+    return ans;
+}
+//给定一个长度为n的数组 nums ，请你找到峰值并返回其索引。数组可能包含多个峰值，在这种情况下，返回任何一个所在位置即可
+int findPeakElement(int* nums, int numsLen)
+{
+    int left = 0;
+    int right = numsLen - 1;
+    int mid = left + (right - left ) / 2;
+    while (left<right)
+    {
+        mid = left + (right - left) / 2;
+        if (nums[mid] > nums[mid + 1])
+            right = mid;
+        else
+            left = mid +1;
+    }
+    return left;
+}
+//给出一个整型数组 numbers 和一个目标值 target，请在数组中找出两个加起来等于目标值的数的下标，返回的下标按升序排列
+//对分
+int binsearch(int tag, int* numbers, int len)
+{
+    int left = 0;
+    int right = len - 1;
+    int mid = left + (right - left + 1) / 2;
+    while (left < right)
+    {
+        if (numbers[mid] < tag)
+            left = mid + 1;
+        else if (numbers[mid] > tag)
+            right = mid - 1;
+        else
+            return mid;
+    }
+    return -1;
+}
+int intcmp (const void* p1, const void* p2)
+{
+    return *(int*)p1 - *(int*)p2;
+}
+//空间O(N),时间O(NlogN),先快排，在找数，一个个遍历过去，但要注意返回时要下标，所以下标->数->下标的思路,但目前知识不支持
+int* twoSum(int* numbers, int numbersLen, int target, int* returnSize) 
+{
+    int i = 0;
+    int* arr = (int*)calloc(2,sizeof(int));
+    qsort(numbers,numbersLen,sizeof(int),intcmp);
+    *returnSize = 2;
+    while (i < numbersLen)
+    {
+        int find = target - numbers[i];
+        if (binsearch(target, numbers, numbersLen) != -1)
+        {
+
+            arr[0] = numbers[i];
+            arr[1] = find;
+            break;
+        }
+        i++;
+    }
+    return arr;
+}
+//1、有一只兔子，从出生后第3个月起每个月都生一只兔子，小兔子长到第三个月后每个月又生一只兔子，假如兔子
+//都不死，问第 n 个月的兔子总数为多少？
+//找规律得出是斐波那契数
+int fib(int n)
+{
+    int num = 0;
+    int num2 = 0;
+    for (int i = 1; i <n; i++)
+    {
+        if (i <= 2)
+            num = num2 = 1;
+        else
+        {
+            num = num + num2;
+            num2 = num + num2;
+        }
+    }
+    return num + num2;
 }

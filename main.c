@@ -456,7 +456,7 @@ int main() {
 	return 0;
 }
 #endif
-#if 1
+#if 0
 int main() {
 	int n = 0;
 	scanf("%d", &n);
@@ -473,6 +473,13 @@ int main() {
 			printf("YES\n");
 		}
 	}
+	return 0;
+}
+#endif
+#if 1
+int main() {
+	char str[] = "abc";
+	printf("%d", fun(str));
 	return 0;
 }
 #endif
