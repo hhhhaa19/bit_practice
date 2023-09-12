@@ -833,7 +833,7 @@ int intcmp (const void* p1, const void* p2)
 {
     return *(int*)p1 - *(int*)p2;
 }
-//空间O(N),时间O(NlogN),先快排，在找数，一个个遍历过去，但要注意返回时要下标，所以下标->数->下标的思路,但目前知识不支持
+//空间O(N),时间O(NlogN),先快排，在找数，一个个遍历过去，但要注意返回时要下标，所以下标->数->下标的思路,但目前知识不支持(哈希表)
 int* twoSum(int* numbers, int numbersLen, int target, int* returnSize) 
 {
     int i = 0;
