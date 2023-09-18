@@ -81,3 +81,4 @@ typedef struct Arr
 	int a[];
 }Arr;
 int fun(char* s);
+int test();

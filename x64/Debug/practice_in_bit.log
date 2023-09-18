@@ -5,9 +5,9 @@ D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(36
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(411,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(678,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(699,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(749,14): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-  shutdown.c
-  正在生成代码...
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(724,19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(784,14): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(84): warning C4716: “Nikos2”: 必须返回一个值
 D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(483): warning C4715: “majorityElement”: 不是所有的控件路径都返回值
+D:\上课\C语言\c语言练习\practice_in_bit\practice_in_bit\summer_work.c(915): warning C4716: “test”: 必须返回一个值
   practice_in_bit.vcxproj -> D:\上课\C语言\c语言练习\practice_in_bit\x64\Debug\practice_in_bit.exe
